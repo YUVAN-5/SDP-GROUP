@@ -1,0 +1,32 @@
+.blinking-border {
+    position: relative;
+    border: 1px solid transparent;
+    border-radius: 8px; /* Add border-radius if you want rounded corners */
+}
+
+.blinking-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 8px; /* Add border-radius if you want rounded corners */
+    background: linear-gradient(80deg, red, blue, red, blue);
+    background-size: 400% 400%;
+    z-index: -1;
+    filter: blur(3px);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

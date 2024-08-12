@@ -1,0 +1,48 @@
+#carousel {
+  perspective: 1200px;
+  padding-top: 12%;
+  font-size: 0;
+  margin-bottom: 3rem;
+  overflow: hidden;
+}
+
+figure#spinner {
+  transform-style: preserve-3d;
+  height: 480px; /* Increased height */
+  width: 100%;
+  position: relative;
+  margin: 0;
+  transform-origin: 50% 50% -500px;
+  transition: 1s;
+}
+
+figure#spinner img {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 25%;
+  transform-origin: 50% 50% -550px;
+  outline: 1px solid transparent;
+  opacity: 0;
+  transition: opacity 1s, transform 1s;
+}
+
+figure#spinner img.current {
+  opacity: 1;
+  transform: rotateY(0deg) translateZ(500px);
+}
+
+figure#spinner img.next {
+  opacity: 0.5;
+  transform: rotateY(-45deg) translateZ(450px);
+}
+
+figure#spinner img.prev {
+  opacity: 0.5;
+  transform: rotateY(45deg) translateZ(450px);
+}
+
+figure#spinner img.hidden {
+  opacity: 0.15;
+}
